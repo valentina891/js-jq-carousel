@@ -51,39 +51,16 @@ $(document).ready(function(){
 // Clicchiamo sui pallini e mostriamo l’immagine corrispondente
 // Generiamo i pallini con JS
 
-// var imgSelezionata = 0;
-// $('.nav i:first').addClass('blue');
-//
-// $('.nav').click(function(){
-// 	$('.nav').eq(imgSelezionata).removeClass('blue');
-// 	$(this).addClass("blue");
-// 	$('img').eq(imgSelezionata).hide();
-// 	imgSelezionata=+$(this).data('num')-1;
-// 	// $('img').eq(imgSelezionata).fadeIn();
-// });
-//
-// $('.next').click(function(){
-// 	$('.images').eq(imgSelezionata).hide();
-// 	$('.nav').eq(imgSelezionata).removeClass('blue');
-//
-//     if(imgSelezionata<3)
-// 		imgSelezionata++;
-// 	else
-// 		imgSelezionata=0;
-//
-// 	// $('.images').eq(imgSelezionata).fadeIn();
-// 	$('.nav').eq(imgSelezionata).addClass('blue');
-// });
-//
-// $('.prev').click(function(){
-// 	$('.images').eq(imgSelezionata).hide();
-// 	$('.nav').eq(imgSelezionata).removeClass('blue');
-//
-// 	if(imgSelezionata>0)
-// 		imgSelezionata--;
-// 	else
-// 		imgSelezionata=3;
-//
-// 	// $('.images').eq(imgSelezionata).fadeIn();
-// 	$('.nav').eq(imgSelezionata).addClass('blue');
-// });
+$('.nav i').click(
+    function() {
+        var posizione = $(this).index();
+        console.log(posizione);
+
+        $('.images img').removeClass('active');
+        $('.images img').eq(posizione).addClass('active');
+
+        $('.nav i').removeClass('active');
+        $('.nav i').eq(posizione).addClass('active');
+
+    }
+)
